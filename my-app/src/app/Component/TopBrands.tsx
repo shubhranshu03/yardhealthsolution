@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const TopBrands: React.FC = () => {
   const brands = [
@@ -13,72 +13,65 @@ const TopBrands: React.FC = () => {
     '/image 20.png'
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
-        (prevIndex + 1) % brands.length
-      );
-    }, 3000); // Change logo every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Calculate the visible logos (centered around current index)
-  const getVisibleLogos = () => {
-    const visibleCount = 5; // Number of logos to show at once
-    const start = currentIndex;
-    const visibleLogos = [];
-
-    for (let i = 0; i < visibleCount; i++) {
-      const index = (start + i) % brands.length;
-      visibleLogos.push(brands[index]);
-    }
-
-    return visibleLogos;
-  };
+  // Duplicate brands for infinite loop effect
+  const duplicatedBrands = [...brands, ...brands];
 
   return (
-    <div className="container mx-auto px-4 py-8 sm:py-12">
-      <div className="text-center mb-8 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+    <div className="container mx-auto px-4 py-4 sm:py-8 md:py-12">
+      <div className="text-center mb-6 sm:mb-8 md:mb-12">
+        <h2 className="font-bold mb-3 sm:mb-4 md:mb-6 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ fontSize: 'clamp(24px, 5vw, 40px)' }}>
           Top Brands of Hearing Aids
         </h2>
-        <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
-          Discover the leading hearing aid brands trusted by professionals worldwide, 
-          offering cutting-edge technology and superior sound quality.
-        </p>
       </div>
-      <div className="relative overflow-hidden">
-        <div className="flex justify-center items-center space-x-4 sm:space-x-8 transition-all duration-700 ease-in-out">
-          {getVisibleLogos().map((brandIcon, index) => (
+      <div className="overflow-hidden">
+        <div 
+          className="flex items-center gap-2 sm:gap-3 md:gap-4"
+          style={{
+            animation: 'scroll 20s linear infinite',
+            width: 'max-content'
+          }}
+        >
+          {duplicatedBrands.map((brandIcon, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 transform transition-all duration-700 ease-in-out"
+              className="flex-shrink-0"
               style={{
-                opacity: index === 2 ? 1 : 0.5,
-                scale: index === 2 ? '1.0 sm:1.1' : '0.8 sm:0.9'
+                width: 'clamp(150px, 25vw, 272px)',
+                height: 'clamp(50px, 8vw, 80px)',
+                opacity: 1,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#fff'
               }}
             >
-              <div className="w-24 h-24 sm:w-48 sm:h-48 flex items-center justify-center">
-                <Image 
-                  src={brandIcon} 
-                  alt={`Brand ${index + 1}`} 
-                  width={120} 
-                  height={120} 
-                  className="object-contain hover:scale-110 transition-all duration-300 max-w-full max-h-full"
-                />
-              </div>
+              <Image 
+                src={brandIcon} 
+                alt={`Brand ${index + 1}`} 
+                width={200} 
+                height={60} 
+                className="object-contain max-w-full max-h-full"
+              />
             </div>
           ))}
         </div>
       </div>
-      <div className="text-center mt-6 sm:mt-8">
-        <button className="bg-green-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-green-600 transition-all duration-300">
+      <div className="text-center mt-4 sm:mt-6 md:mt-8">
+        <button className="text-white px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-medium transition-all duration-300" style={{ backgroundColor: '#4EBD44' }}>
           Book Your Appointment
         </button>
       </div>
+      
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -28,7 +28,7 @@ const Home: React.FC = () => {
 
   return (
     <div 
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat" 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat pb-16" 
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${backgroundImages[currentBackgroundIndex]})`,
         backgroundSize: 'cover',
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
             {/* Logo */}
             <div className="flex items-center space-x-4">
               <Image 
-                src="/Logo (3).png" 
+                src="/logo1 (2).png" 
                 alt="Yard Health Logo" 
                 width={220} 
                 height={220} 
@@ -119,19 +119,18 @@ const Home: React.FC = () => {
           <div className="max-w-2xl">
             {/* Main Content - Left Aligned */}
             <div className="text-white relative z-20">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
+              <h1 className="text-[40px] text-white font-bold leading-tight mb-4 sm:mb-6">
                 Rediscover Clear Hearing,<br />
-                <span className="text-green-400">Rediscover Life.</span>
+                <span className="text-white">Rediscover Life.</span>
               </h1>
               
-              <p className="text-sm sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-lg">
+              <p className="text-[16px] leading-[27px] text-gray-200 mb-6 sm:mb-8 max-w-lg">
                 Personalized hearing care, expert audiologists, and advanced technology—all 
                 closer than you think.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium hover:bg-white hover:text-gray-800 transition-all duration-300 flex items-center justify-center">
-                  <CiLocationOn className="mr-2" />
+                <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium hover:bg-white hover:text-gray-800 transition-all duration-300">
                   Find A Clinic Near You
                 </button>
                 <button className="w-full sm:w-auto bg-green-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium hover:bg-green-600 transition-all duration-300">
@@ -140,6 +139,23 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      {/* Slider Indicators */}
+      <div className="absolute bottom-35 left-0 right-0 z-20">
+        <div className="flex items-center justify-center gap-2 sm:gap-3">
+          {backgroundImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentBackgroundIndex(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                currentBackgroundIndex === index
+                  ? 'bg-green-500 w-6 sm:w-10'
+                  : 'bg-white/80 w-5 sm:w-8'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </div>

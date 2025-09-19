@@ -1,9 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const HearingAidsTypes: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const hearingAidTypes = [
     {
       image: '/image 4.png',
@@ -37,6 +39,15 @@ const HearingAidsTypes: React.FC = () => {
     }
   ];
 
+  // Auto-scroll effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % hearingAidTypes.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [hearingAidTypes.length]);
+
   return (
     <div className="container mx-auto px-4 py-8 sm:py-12">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-10">Types of Hearing Aids</h2>
@@ -46,20 +57,39 @@ const HearingAidsTypes: React.FC = () => {
             key={index} 
             className="flex flex-col items-center text-center"
           >
-            <div className="bg-blue-50 rounded-full w-24 h-24 sm:w-40 sm:h-40 flex items-center justify-center mb-2 shadow-md overflow-hidden">
-              <div className="relative w-full h-full flex items-center justify-center">
+            <div className="bg-blue-50 w-24 h-24 sm:w-45 sm:h-45 flex flex-col items-center justify-center mb-2 shadow-md overflow-hidden" style={{ border: '1px solid #5592FF', borderRadius: '50%' }}>
+              <div className="relative w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center">
                 <Image 
                   src={aid.image} 
                   alt={aid.name} 
                   fill
-                  sizes="(max-width: 768px) 96px, 160px"
-                  className="object-contain p-2 sm:p-4"
+                  sizes="(max-width: 768px) 64px, 96px"
+                  className="object-contain p-1 sm:p-2"
                 />
               </div>
+              <h3 className="text-xs sm:text-sm font-semibold px-1 text-center leading-tight">{aid.name}</h3>
             </div>
-            <h3 className="text-xs sm:text-sm font-semibold mt-2 px-2 truncate max-w-full">{aid.name}</h3>
           </div>
         ))}
+      </div>
+      
+      {/* Progress Bar Slider */}
+      <div className="mt-6 sm:mt-8 flex justify-center px-4">
+        <div className="flex space-x-1 sm:space-x-2">
+          {[0, 1, 2].map((_, index) => (
+            <div
+              key={index}
+              className={`h-1.5 sm:h-2 w-6 sm:w-8 rounded-full transition-all duration-500 ${
+                index === (currentSlide % 3)
+                  ? 'bg-green-500 shadow-lg' 
+                  : 'bg-gray-300'
+              }`}
+              style={{
+                boxShadow: index === (currentSlide % 3) ? '0 1px 4px rgba(34, 197, 94, 0.3)' : '0 1px 2px rgba(0, 0, 0, 0.1)'
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

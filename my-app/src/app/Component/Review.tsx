@@ -1,111 +1,109 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaStar } from 'react-icons/fa';
+'use client';
 
-// Define a type for review data
-interface ReviewData {
+import React from 'react';
+
+interface Review {
   id: number;
   name: string;
-  location: string;
-  comment: string;
+  text: string;
   rating: number;
-  profilePic: string;
+  avatar: string;
 }
 
-const reviews: ReviewData[] = [
-  {
-    id: 1,
-    name: "Samantha Varma",
-    location: "Delhi",
-    comment: "After Getting My Hearing Aid From YardHealth, I Feel Confident Again. Thank You For Bringing Back The Joy Of Conversations.",
-    rating: 5,
-    profilePic: "/Logo (1).png"
-  },
-  {
-    id: 2,
-    name: "Nikita Sharma",
-    location: "Bangalore",
-    comment: "Very Professional Audiologists And Excellent After-Sales Service. Highly Recommend YardHealth Clinics.",
-    rating: 5,
-    profilePic: "/logo (2).png"
-  },
-  {
-    id: 3,
-    name: "Anil Kumar",
-    location: "Lucknow",
-    comment: "I Was Worried About The Point Cost, But The EMI Plan Truly A Blessing For Senior Citizens Like Me.",
-    rating: 4,
-    profilePic: "/logo (3).png"
-  },
-  {
-    id: 4,
-    name: "Priyanka Singh",
-    location: "Mumbai",
-    comment: "Excellent Service And Very Polite Staff. The Fitting With Clarity Is Amazing.",
-    rating: 4,
-    profilePic: "/Logo (1).png"
-  },
-  {
-    id: 5,
-    name: "Vikram Mehta",
-    location: "Gujarat",
-    comment: "I Had A Great Experience Before And After The Hearing Aid Fitting. Understanding Proper Care.",
-    rating: 5,
-    profilePic: "/logo (2).png"
-  }
-];
-
-const ReviewComponent: React.FC = () => {
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <FaStar 
-        key={index} 
-        className={`inline-block mr-1 ${index < rating ? 'text-yellow-500' : 'text-gray-300'}`} 
-        size={16}
-      />
-    ));
-  };
+const Review: React.FC = () => {
+  const reviews: Review[] = [
+    {
+      id: 1,
+      name: "Rebecca Vermen, Client",
+      text: "After Getting My Hearing Aid From YardHealth, I Feel Connected Again. Thank You For Bringing Back The Joy Of Conversations.",
+      rating: 5,
+      avatar: "/g1.jpg"
+    },
+    {
+      id: 2,
+      name: "Nadia Brennan, Springfield", 
+      text: "Very Professional Audiologists And Excellent After-Sales Service. Highly Recommend YardHealth Clinics.",
+      rating: 5,
+      avatar: "/g2.jpg"
+    },
+    {
+      id: 3,
+      name: "Anil Kamlur, Luckville",
+      text: "I Was Worried About The Cost, But The EM Plan Made It Affordable. Truly A Blessing For Senior Citizens Like Me.",
+      rating: 4,
+      avatar: "/g3.jpg"
+    },
+    {
+      id: 4,
+      name: "Peggy Jean, Rocky",
+      text: "Excellent Service And Very Polite Staff. The Fitting Was Quick, And The Sound Clarity Is Amazing.",
+      rating: 4,
+      avatar: "/g4.jpg"
+    }
+  ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center mb-8">Hear What Our Clients Say</h2>
-      
-      {/* Static grid layout for reviews */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {reviews.map((review) => (
-          <div 
-            key={review.id} 
-            className="bg-white shadow-md rounded-lg p-4 text-center"
-          >
-            <div className="flex justify-center mb-3">
-              <div className="w-16 h-16 rounded-full overflow-hidden mb-3">
-                <Image 
-                  src={review.profilePic} 
-                  alt={`${review.name}'s profile`} 
-                  width={64} 
-                  height={64} 
-                  className="object-contain w-full h-full"
-                />
+    <div className="w-full max-w-[1555px] mx-auto px-4 py-8 overflow-hidden">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+        Hear What Our Clients Say
+      </h2>
+
+      <div className="relative w-full overflow-hidden">
+        <div 
+          className="flex"
+          style={{
+            animation: 'scroll 12s linear infinite',
+            width: `${reviews.length * 2 * 315}px`
+          }}
+        >
+          {[...reviews, ...reviews].map((review, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 mx-2.5 bg-[#F4F4F4] shadow-md rounded-lg p-4 text-left flex flex-col"
+              style={{ width: '295px', height: '359px', borderRadius: '20px' }}
+            >
+              <div className="flex justify-start mb-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src={review.avatar}
+                    alt={review.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="w-[263px] h-[135px] mb-4 overflow-hidden">
+                <p className="text-[#2C2C2C] font-medium text-xl leading-[27px] capitalize text-left">
+                  {review.text}
+                </p>
+              </div>
+
+              <div className="flex justify-start mb-3">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <span key={i} className={`text-xl ${i < review.rating ? 'text-yellow-400' : 'text-gray-300'}`}>
+                    ★
+                  </span>
+                ))}
+              </div>
+
+              <div className="text-left">
+                <p className="text-gray-600 font-medium text-sm">
+                  {review.name}
+                </p>
               </div>
             </div>
-            
-            <div className="flex justify-center mb-2">
-              {renderStars(review.rating)}
-            </div>
-            
-            <p className="text-gray-600 mb-3 text-xs italic h-16 overflow-hidden">
-              "{review.comment}"
-            </p>
-            
-            <div>
-              <p className="font-semibold text-gray-800 text-sm">{review.name}</p>
-              <p className="text-gray-500 text-xs">{review.location}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-${reviews.length * 315}px); }
+        }
+      `}</style>
     </div>
   );
 };
 
-export default ReviewComponent; 
+export default Review;

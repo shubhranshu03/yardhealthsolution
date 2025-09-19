@@ -91,22 +91,29 @@ const Footer: React.FC = () => {
 
         {/* Newsletter Column */}
         <div className="flex flex-col justify-start">
-          <h3 className="text-lg font-semibold mb-4 text-white">Enter your email</h3>
           <form onSubmit={handleEmailSubmit} className="flex-grow flex flex-col justify-start">
             <div className="relative w-full">
-              <input 
-                type="email" 
-                placeholder="Email address" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-transparent border-b border-gray-600 text-white px-2 py-2 pr-10 w-full focus:outline-none focus:border-green-500 text-sm placeholder-gray-500"
-              />
-              <button 
-                type="submit"
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-green-500 text-black rounded-full w-8 h-8 flex items-center justify-center hover:bg-green-600 transition-colors"
-              >
-                →
-              </button>
+              <div className="flex border border-gray-700 rounded-lg overflow-hidden">
+                <input 
+                  type="email" 
+                  placeholder="Email address" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-transparent text-white px-4 py-3 flex-1 focus:outline-none text-sm placeholder-gray-400"
+                />
+                <button 
+                  type="submit"
+                  className="bg-green-600 w-12 h-12 hover:bg-green-700 transition-colors flex items-center justify-center"
+                >
+                  <Image 
+                    src="/Path.png" 
+                    alt="Arrow" 
+                    width={20} 
+                    height={20}
+                    className="text-black"
+                  />
+                </button>
+              </div>
             </div>
             <p className="text-xs text-gray-400 mt-2">No spam. Only the best insights.</p>
           </form>
@@ -115,7 +122,7 @@ const Footer: React.FC = () => {
 
       {/* Social Section */}
       <div className="container mx-auto mt-8 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
-        {/* Logo and Copyright */}
+        {/* Logo */}
         <div className="flex items-center mb-4 md:mb-0">
           <Image 
             src="/Logo (1).png" 
@@ -124,7 +131,11 @@ const Footer: React.FC = () => {
             height={50} 
             className="mr-4"
           />
-          <span className="text-sm text-gray-400">© 2023 YardHealth</span>
+        </div>
+
+        {/* Copyright - Centered */}
+        <div className="flex justify-center mb-4 md:mb-0">
+          <span className="text-sm text-gray-400">© 2025 YardHealth</span>
         </div>
 
         {/* Social Icons */}

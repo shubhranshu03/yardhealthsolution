@@ -5,82 +5,146 @@ import Image from 'next/image';
 
 const Journey: React.FC = () => {
   return (
-    <div className="journey-container max-w-6xl mx-auto px-4 py-8 sm:py-12">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-16 text-gray-800 leading-tight">
+    <div className="journey-container max-w-6xl mx-auto px-6 py-12 sm:py-16">
+      <h2 className="font-bold text-center mb-12 sm:mb-16 text-gray-800 leading-tight text-3xl sm:text-4xl md:text-5xl">
         Your Journey to Better Hearing
       </h2>
-      <div className="journey-steps grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 relative">
+      <div className="journey-steps grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 relative">
         {/* Step 1: Book a Free Hearing Test */}
         <div className="journey-step text-center relative">
-          <div className="step-icon-container bg-[#E6E6FA] rounded-full w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div 
+            className="step-icon-container flex items-center justify-center mx-auto mb-6"
+            style={{
+              width: '120px',
+              height: '120px',
+              borderRadius: '60px',
+              padding: '20px',
+              opacity: 1,
+              gap: '10px'
+            }}
+          >
             <Image 
               src="/doc3.png" 
               alt="Book a Free Hearing Test" 
-              width={48} 
-              height={48} 
-              className="w-8 h-8 sm:w-16 sm:h-16"
+              width={80} 
+              height={80}
+              style={{ opacity: 1 }}
             />
           </div>
-          <div className="step-number absolute top-0 left-0 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs sm:text-base">1</div>
-          <h3 className="text-sm sm:text-lg font-semibold mt-2 sm:mt-4">Book a Free Hearing Test</h3>
-          <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2">Quick and simple online booking</p>
+          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Book a Free Hearing Test</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Quick and simple online booking</p>
         </div>
 
         {/* Step 2: Get a Professional Evaluation */}
         <div className="journey-step text-center relative">
-          <div className="step-icon-container bg-[#FFE4E1] rounded-full w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div 
+            className="step-icon-container flex items-center justify-center mx-auto mb-6"
+            style={{
+              width: '120px',
+              height: '120px',
+              borderRadius: '60px',
+              padding: '20px',
+              opacity: 1,
+              gap: '10px'
+            }}
+          >
             <Image 
               src="/doc2.png" 
               alt="Get a Professional Evaluation" 
-              width={48} 
-              height={48} 
-              className="w-8 h-8 sm:w-16 sm:h-16"
+              width={80} 
+              height={80}
+              style={{ opacity: 1 }}
             />
           </div>
-          <div className="step-number absolute top-0 left-1/4 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs sm:text-base">2</div>
-          <h3 className="text-sm sm:text-lg font-semibold mt-2 sm:mt-4">Get a Professional Evaluation</h3>
-          <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2">Comprehensive audiological tests</p>
+          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Get a Professional Evaluation</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Comprehensive audiological tests</p>
         </div>
 
         {/* Step 3: Try Before You Buy */}
         <div className="journey-step text-center relative">
-          <div className="step-icon-container bg-[#E0F2F1] rounded-full w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div 
+            className="step-icon-container flex items-center justify-center mx-auto mb-6"
+            style={{
+              width: '120px',
+              height: '120px',
+              borderRadius: '60px',
+              padding: '20px',
+              opacity: 1,
+              gap: '10px'
+            }}
+          >
             <Image 
               src="/doc1.png" 
               alt="Try Before You Buy" 
-              width={48} 
-              height={48} 
-              className="w-8 h-8 sm:w-16 sm:h-16"
+              width={80} 
+              height={80}
+              style={{ opacity: 1 }}
             />
           </div>
-          <div className="step-number absolute top-0 left-1/2 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs sm:text-base">3</div>
-          <h3 className="text-sm sm:text-lg font-semibold mt-2 sm:mt-4">Try Before You Buy</h3>
-          <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2">Experience hearing aids in real-life situations</p>
+          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Try Before You Buy</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Experience hearing aids in real-life situations</p>
         </div>
 
         {/* Step 4: Personalized Fitting & Support */}
         <div className="journey-step text-center relative">
-          <div className="step-icon-container bg-[#FFE0F0] rounded-full w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-4">
+          <div 
+            className="step-icon-container flex items-center justify-center mx-auto mb-6"
+            style={{
+              width: '120px',
+              height: '120px',
+              borderRadius: '60px',
+              padding: '20px',
+              opacity: 1,
+              gap: '10px'
+            }}
+          >
             <Image 
               src="/doc5.png" 
               alt="Personalized Fitting & Support" 
-              width={48} 
-              height={48} 
-              className="w-8 h-8 sm:w-16 sm:h-16"
+              width={80} 
+              height={80}
+              style={{ opacity: 1 }}
             />
           </div>
-          <div className="step-number absolute top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-xs sm:text-base">4</div>
-          <h3 className="text-sm sm:text-lg font-semibold mt-2 sm:mt-4">Personalized Fitting & Support</h3>
-          <p className="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2">Ongoing care and adjustments</p>
+          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Personalized Fitting & Support</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Ongoing care and adjustments</p>
         </div>
+      </div>
 
-        {/* Connecting Line - Hidden on mobile */}
-        <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-green-500 -z-10"></div>
+      {/* Horizontal Line with Numbered Circles */}
+      <div className="relative mt-12 mb-12">
+        <div className="flex justify-center items-center">
+          <div className="hidden lg:block">
+            <div 
+              className="h-0.5 bg-black relative"
+              style={{ width: '1236.46px', height: '2px' }}
+            >
+              {/* Numbered Circles */}
+              <div className="absolute -top-2.5 left-40 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>1</div>
+              <div className="absolute -top-2.5 left-115 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>2</div>
+              <div className="absolute -top-2.5 left-189 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>3</div>
+              <div className="absolute -top-2.5 right-45 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>4</div>
+            </div>
+          </div>
+          
+          {/* Mobile: Clean numbered indicators */}
+          <div className="lg:hidden w-full max-w-md mx-auto">
+            <div className="flex justify-between items-center px-4">
+              <div className="w-10 h-10 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md" style={{ backgroundColor: '#474FB8' }}>1</div>
+              <div className="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+              <div className="w-10 h-10 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md" style={{ backgroundColor: '#474FB8' }}>2</div>
+              <div className="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+              <div className="w-10 h-10 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md" style={{ backgroundColor: '#474FB8' }}>3</div>
+              <div className="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+              <div className="w-10 h-10 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md" style={{ backgroundColor: '#474FB8' }}>4</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* CTA Button */}
-      <div className="text-center mt-8 sm:mt-12">
-        <button className="bg-[#2ecc71] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#27ae60] transition-colors shadow-md">
+      <div className="text-center mt-12 sm:mt-16 px-6">
+        <button className="text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto transform hover:scale-105" style={{ backgroundColor: '#4EBD44' }}>
           Schedule Your Free Test Today
         </button>
       </div>

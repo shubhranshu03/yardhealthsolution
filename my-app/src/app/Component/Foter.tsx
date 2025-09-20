@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
           <h3 className="text-lg font-semibold mb-4" style={{ color: '#808080' }}>Company Info</h3>
           <ul className="space-y-2">
             {[
-              { label: 'About Us', href: '/about-us' },
+              { label: 'About Us', href: '/about' },
               { label: 'Careers', href: '/careers' },
               { label: 'Blog', href: '/blog' },
               { label: 'Press', href: '/press' },

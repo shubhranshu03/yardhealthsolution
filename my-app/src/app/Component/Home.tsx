@@ -1,7 +1,8 @@
-"use client";
+ "use client";
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // ✅ Import Next.js Link
 import { CiLocationOn } from "react-icons/ci";
 import { FaBars } from "react-icons/fa";
 
@@ -88,14 +89,21 @@ const Home: React.FC = () => {
                 >
                   ×
                 </button>
-                {['About Us', 'Hearing Aid', 'Our Brands', 'Franchise', 'Contact Us'].map((item, index) => (
-                  <a 
+                {[
+                  { name: "About Us", path: "/about" },
+                  { name: "Hearing Aid", path: "/hearing-aid" },
+                  { name: "Our Brands", path: "/brands" },
+                  { name: "Franchise", path: "/franchise" },
+                  { name: "Contact Us", path: "/contact" }
+                ].map((item, index) => (
+                  <Link 
                     key={index} 
-                    href="#" 
+                    href={item.path} 
                     className="text-white hover:text-green-400 text-lg md:text-sm font-medium"
+                    onClick={() => setIsMobileMenuOpen(false)} // ✅ closes mobile menu after click
                   >
-                    {item}
-                  </a>
+                    {item.name}
+                  </Link>
                 ))}
               </div>
             </div>

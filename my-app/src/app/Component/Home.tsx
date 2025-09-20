@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa";
 
 const Home: React.FC = () => {
   const backgroundImages = [
-    '/home1.png',
+    '/k1.jpg',
     '/home2.png',
     '/home3.png',
     '/home4.png'
@@ -28,42 +28,39 @@ const Home: React.FC = () => {
 
   return (
     <div 
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat pb-16" 
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat pb-16 overflow-hidden" 
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${backgroundImages[currentBackgroundIndex]})`,
+        backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         transition: 'background-image 0.5s ease-in-out'
       }}
     >
-      {/* Background Image for Mobile Responsiveness */}
+      {/* Responsive Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image 
           src={backgroundImages[currentBackgroundIndex]} 
           alt="Background" 
           fill
           priority
-          quality={80}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover object-center opacity-40"
-          style={{
-            filter: 'brightness(0.6)'
-          }}
+          quality={100}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          className="object-cover object-center"
         />
       </div>
       
-      {/* Rest of the component remains the same */}
-      <nav className="absolute top-0 left-0 right-0 z-20 relative">
+      {/* Navigation */}
+      <nav className="absolute top-0 left-0 right-0 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center space-x-4">
+          <div className="flex justify-between items-center h-16 md:h-20">
+            {/* Logo - Responsive Sizing */}
+            <div className="flex items-center">
               <Image 
                 src="/logo1 (2).png" 
                 alt="Yard Health Logo" 
-                width={220} 
-                height={220} 
-                className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+                width={150} 
+                height={150} 
+                className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain"
               />
             </div>
 
@@ -77,35 +74,39 @@ const Home: React.FC = () => {
               </button>
             </div>
 
-            {/* Navigation Links */}
+            {/* Navigation Links - Responsive Mobile Menu */}
             <div className={`
-              fixed inset-0 bg-black bg-opacity-80 z-50 transform 
+              fixed inset-0 bg-black bg-opacity-90 z-50 transform 
               ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-              md:translate-x-0 md:relative md:bg-transparent md:block md:static
+              md:translate-x-0 md:relative md:bg-transparent md:block
               transition-transform duration-300 ease-in-out
             `}>
-              <div className="flex flex-col md:flex-row items-center justify-center md:justify-end h-full space-y-6 md:space-y-0 md:space-x-8">
+              <div className="flex flex-col md:flex-row items-center justify-center md:justify-end h-full space-y-6 md:space-y-0 md:space-x-4 lg:space-x-8 p-4 md:p-0">
                 <button 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="md:hidden absolute top-4 right-4 text-white text-2xl"
+                  className="md:hidden absolute top-4 right-4 text-white text-3xl"
                 >
                   ×
                 </button>
-                <a href="#" className="text-white hover:text-green-400 text-base md:text-sm font-medium">About Us</a>
-                <a href="#" className="text-white hover:text-green-400 text-base md:text-sm font-medium">Hearing Aid</a>
-                <a href="#" className="text-white hover:text-green-400 text-base md:text-sm font-medium">Our Brands</a>
-                <a href="#" className="text-white hover:text-green-400 text-base md:text-sm font-medium">Franchise</a>
-                <a href="#" className="text-white hover:text-green-400 text-base md:text-sm font-medium">Contact Us</a>
+                {['About Us', 'Hearing Aid', 'Our Brands', 'Franchise', 'Contact Us'].map((item, index) => (
+                  <a 
+                    key={index} 
+                    href="#" 
+                    className="text-white hover:text-green-400 text-lg md:text-sm font-medium"
+                  >
+                    {item}
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="hidden md:flex items-center space-x-3">
-              <button className="bg-transparent border-2 border-white text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-all duration-300 flex items-center">
-                <CiLocationOn className="mr-2" />
+            {/* CTA Buttons - Responsive */}
+            <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
+              <button className="bg-transparent border-2 border-white text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-white hover:text-gray-800 transition-all duration-300 flex items-center">
+                <CiLocationOn className="mr-1 lg:mr-2" />
                 Find A Clinic
               </button>
-              <button className="bg-green-500 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-green-600">
+              <button className="bg-green-500 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-green-600">
                 Login
               </button>
             </div>
@@ -113,27 +114,25 @@ const Home: React.FC = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Responsive */}
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl">
-            {/* Main Content - Left Aligned */}
             <div className="text-white relative z-20">
-              <h1 className="text-[40px] text-white font-bold leading-tight mb-4 sm:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-[40px] lg:text-[48px] font-bold leading-tight mb-3 sm:mb-4">
                 Rediscover Clear Hearing,<br />
                 <span className="text-white">Rediscover Life.</span>
               </h1>
               
-              <p className="text-[16px] leading-[27px] text-gray-200 mb-6 sm:mb-8 max-w-lg">
-                Personalized hearing care, expert audiologists, and advanced technology—all 
-                closer than you think.
+              <p className="text-sm sm:text-base md:text-[16px] leading-relaxed text-gray-200 mb-4 max-w-full md:max-w-[606px]">
+                Personalized hearing care, expert audiologists, and advanced technology—all closer than you think.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium hover:bg-white hover:text-gray-800 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-white hover:text-gray-800 transition-all duration-300">
                   Find A Clinic Near You
                 </button>
-                <button className="w-full sm:w-auto bg-green-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-medium hover:bg-green-600 transition-all duration-300">
+                <button className="w-full sm:w-auto bg-green-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-green-600 transition-all duration-300">
                   Book Free Appointment
                 </button>
               </div>
@@ -141,19 +140,27 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* Slider Indicators */}
-      <div className="absolute bottom-35 left-0 right-0 z-20">
+
+      {/* Slider Indicators - Responsive */}
+      <div className="absolute bottom-10 sm:bottom-16 left-0 right-0 z-20">
         <div className="flex items-center justify-center gap-2 sm:gap-3">
           {backgroundImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentBackgroundIndex(index)}
               aria-label={`Go to slide ${index + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className={`transition-all duration-300 ${
                 currentBackgroundIndex === index
-                  ? 'bg-green-500 w-6 sm:w-10'
-                  : 'bg-white/80 w-5 sm:w-8'
+                  ? 'bg-green-500'
+                  : 'bg-white/80'
               }`}
+              style={{
+                width: '50px',
+                height: '4px',
+                borderRadius: '41px',
+                transform: 'rotate(0deg)',
+                opacity: 1
+              }}
             />
           ))}
         </div>

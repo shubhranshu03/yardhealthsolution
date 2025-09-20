@@ -14,7 +14,7 @@ const WhyChose: React.FC = () => {
     { 
       image: '/card1.png', 
       title: '24/7', 
-      description: 'Online Support'
+      description: 'Ongoing Support'
     },
     { 
       image: '/card2.png', 
@@ -29,7 +29,7 @@ const WhyChose: React.FC = () => {
     { 
       image: '/card4.png', 
       title: '300+', 
-      description: 'Hearing Aid Models'
+      description: 'Hearing Aids Models'
     },
     { 
       image: '/card5.png', 
@@ -38,14 +38,14 @@ const WhyChose: React.FC = () => {
     },
     { 
       image: '/card6.png', 
-      title: 'YardHealth', 
+      title: 'YardHealth Trust', 
       description: 'Lifetime Hearing Care'
     }
   ];
 
   return (
     <div 
-      className="relative bg-cover bg-center bg-no-repeat py-16"
+      className="relative bg-cover bg-center bg-no-repeat py-12 sm:py-16"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/bg1.png')`,
         backgroundSize: 'cover',
@@ -53,24 +53,26 @@ const WhyChose: React.FC = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-white mb-4 px-4" style={{ fontSize: 'clamp(24px, 5vw, 40px)', fontWeight: 600, lineHeight: 'clamp(32px, 6vw, 54px)' }}>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-white mb-4 px-2 sm:px-4" style={{ 
+            fontSize: 'clamp(20px, 5vw, 40px)', 
+            fontWeight: 600, 
+            lineHeight: 'clamp(28px, 6vw, 54px)' 
+          }}>
             Why Choose Yard Health Hearing Solutions
             <br />
             for Your Hearing Needs?
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5 place-items-center">
           {features.map((feature, index) => {
             return (
               <div 
                 key={index} 
-                className="bg-white bg-opacity-90 shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-xl"
+                className={`bg-white bg-opacity-90 shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-xl w-full max-w-[295px] ${index === 0 || index === 3 || index === 2 ? 'sm:ml-0' : ''}`}
                 style={{
-                  width: '100%',
-                  maxWidth: '295px',
-                  minHeight: '185px',
+                  minHeight: '140px',
                   transform: 'rotate(0deg)',
                   opacity: 1,
                   borderRadius: '30px',
@@ -104,7 +106,10 @@ const WhyChose: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-start">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2 text-left">{feature.title}</h3>
-                    <p className="text-black text-left" style={{ fontSize: 'clamp(14px, 3vw, 16px)', fontWeight: 700 }}>{feature.description}</p>
+                    <p className="text-black text-left" style={{ 
+                      fontSize: 'clamp(14px, 3vw, 16px)', 
+                      fontWeight: 700 
+                    }}>{feature.description}</p>
                   </div>
                 </div>
               </div>

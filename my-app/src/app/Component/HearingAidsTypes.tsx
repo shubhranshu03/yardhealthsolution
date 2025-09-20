@@ -33,7 +33,7 @@ const HearingAidsTypes: React.FC = () => {
       description: 'Active lifestyle hearing aid with enhanced durability'
     },
     {
-      image: '/image 9.png',
+      image: '/n1.png',
       name: 'Sigma S',
       description: 'Sophisticated hearing solution with cutting-edge features'
     }
@@ -65,6 +65,12 @@ const HearingAidsTypes: React.FC = () => {
                   fill
                   sizes="(max-width: 768px) 64px, 96px"
                   className="object-contain p-1 sm:p-2"
+                  onError={(e) => {
+                    console.error(`Error loading image: ${aid.image}`, e);
+                    (e.target as HTMLImageElement).onerror = null;
+                    (e.target as HTMLImageElement).src = '/blacklogo.png'; // Fallback image
+                    (e.target as HTMLImageElement).style.objectFit = 'contain';
+                  }}
                 />
               </div>
               <h3 className="text-xs sm:text-sm font-semibold px-1 text-center leading-tight">{aid.name}</h3>
@@ -79,12 +85,17 @@ const HearingAidsTypes: React.FC = () => {
           {[0, 1, 2].map((_, index) => (
             <div
               key={index}
-              className={`h-1.5 sm:h-2 w-6 sm:w-8 rounded-full transition-all duration-500 ${
+              className={`transition-all duration-500 ${
                 index === (currentSlide % 3)
                   ? 'bg-green-500 shadow-lg' 
                   : 'bg-gray-300'
               }`}
               style={{
+                width: '50px',
+                height: '4px',
+                borderRadius: '41px',
+                transform: 'rotate(0deg)',
+                opacity: 1,
                 boxShadow: index === (currentSlide % 3) ? '0 1px 4px rgba(34, 197, 94, 0.3)' : '0 1px 2px rgba(0, 0, 0, 0.1)'
               }}
             />

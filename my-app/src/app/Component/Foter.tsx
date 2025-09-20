@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Quick Links Column */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+          <h3 className="text-lg font-semibold mb-4" style={{ color: '#808080' }}>Quick Links</h3>
           <ul className="space-y-2">
             {[
               { label: 'Home', href: '/' },
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 
         {/* Company Info Column */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-white">Company Info</h3>
+          <h3 className="text-lg font-semibold mb-4" style={{ color: '#808080' }}>Company Info</h3>
           <ul className="space-y-2">
             {[
               { label: 'About Us', href: '/about-us' },
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
 
         {/* Support & Legal Column */}
         <div>
-          <h3 className="text-lg font-semibold mb-4 text-white">Support & Legal</h3>
+          <h3 className="text-lg font-semibold mb-4" style={{ color: '#808080' }}>Support & Legal</h3>
           <ul className="space-y-2">
             {[
               { label: 'Terms & Conditions', href: '/terms' },

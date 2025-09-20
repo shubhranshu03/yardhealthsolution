@@ -9,7 +9,8 @@ const Journey: React.FC = () => {
       <h2 className="font-bold text-center mb-12 sm:mb-16 text-gray-800 leading-tight text-3xl sm:text-4xl md:text-5xl">
         Your Journey to Better Hearing
       </h2>
-      <div className="journey-steps grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 relative">
+      {/* Photos Row */}
+      <div className="journey-photos grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 relative mb-8">
         {/* Step 1: Book a Free Hearing Test */}
         <div className="journey-step text-center relative">
           <div 
@@ -31,8 +32,6 @@ const Journey: React.FC = () => {
               style={{ opacity: 1 }}
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Book a Free Hearing Test</h3>
-          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Quick and simple online booking</p>
         </div>
 
         {/* Step 2: Get a Professional Evaluation */}
@@ -56,8 +55,6 @@ const Journey: React.FC = () => {
               style={{ opacity: 1 }}
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Get a Professional Evaluation</h3>
-          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Comprehensive audiological tests</p>
         </div>
 
         {/* Step 3: Try Before You Buy */}
@@ -81,8 +78,6 @@ const Journey: React.FC = () => {
               style={{ opacity: 1 }}
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Try Before You Buy</h3>
-          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Experience hearing aids in real-life situations</p>
         </div>
 
         {/* Step 4: Personalized Fitting & Support */}
@@ -106,13 +101,11 @@ const Journey: React.FC = () => {
               style={{ opacity: 1 }}
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold mt-4 mb-3 text-gray-800">Personalized Fitting & Support</h3>
-          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Ongoing care and adjustments</p>
         </div>
       </div>
 
       {/* Horizontal Line with Numbered Circles */}
-      <div className="relative mt-12 mb-12">
+      <div className="relative mt-8 mb-8">
         <div className="flex justify-center items-center">
           <div className="hidden lg:block">
             <div 
@@ -120,9 +113,9 @@ const Journey: React.FC = () => {
               style={{ width: '1236.46px', height: '2px' }}
             >
               {/* Numbered Circles */}
-              <div className="absolute -top-2.5 left-40 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>1</div>
+              <div className="absolute -top-2.5 left-44 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>1</div>
               <div className="absolute -top-2.5 left-115 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>2</div>
-              <div className="absolute -top-2.5 left-189 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>3</div>
+              <div className="absolute -top-2.5 left-187 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>3</div>
               <div className="absolute -top-2.5 right-45 w-6 h-6 text-white rounded-full flex items-center justify-center text-sm font-bold" style={{ backgroundColor: '#474FB8' }}>4</div>
             </div>
           </div>
@@ -142,9 +135,36 @@ const Journey: React.FC = () => {
         </div>
       </div>
 
+      {/* Text Row */}
+      <div className="journey-text grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 relative">
+        {/* Step 1: Book a Free Hearing Test */}
+        <div className="journey-step text-center relative">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Book a Free Hearing Test</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Quick and simple online booking</p>
+        </div>
+
+        {/* Step 2: Get a Professional Evaluation */}
+        <div className="journey-step text-center relative">
+          <h3 className="text-base sm:text-lg font-semibold mb-4 text-gray-800 whitespace-nowrap">Get a Professional Evaluation</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Comprehensive audiological tests</p>
+        </div>
+
+        {/* Step 3: Try Before You Buy */}
+        <div className="journey-step text-center relative">
+          <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-800">Try Before You Buy</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Experience hearing aids in real-life situations</p>
+        </div>
+
+        {/* Step 4: Personalized Fitting & Support */}
+        <div className="journey-step text-center relative">
+          <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-800 whitespace-nowrap">Personalized Fitting & Support</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Ongoing care and adjustments</p>
+        </div>
+      </div>
+
       {/* CTA Button */}
       <div className="text-center mt-12 sm:mt-16 px-6">
-        <button className="text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto transform hover:scale-105" style={{ backgroundColor: '#4EBD44' }}>
+        <button className="text-white rounded-full text-base sm:text-base font-semibold transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto transform hover:scale-105 px-[25px] py-[10px]" style={{ backgroundColor: '#4EBD44' }}>
           Schedule Your Free Test Today
         </button>
       </div>

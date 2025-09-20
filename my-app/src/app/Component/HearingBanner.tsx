@@ -18,8 +18,8 @@ const HearingBanner: React.FC = () => {
         <h1 className="text-[24px] sm:text-[32px] md:text-[40px] font-bold mb-3 sm:mb-4 md:mb-6 leading-tight max-w-4xl mx-auto px-2">
           Don't Miss Out on Life's Best Sounds
         </h1>
-        <p className="text-[14px] sm:text-[16px] mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto text-gray-200 px-4 sm:px-0">
-          Rediscover Our Hearing Solutions and Embrace Every Moment
+        <p className="text-[16px] sm:text-[16px] mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto text-gray-200 px-4 sm:px-0 font-semibold">
+          Rediscover Clear Hearing , Rediscover Life.
         </p>
         <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4 px-4">
           <Link 

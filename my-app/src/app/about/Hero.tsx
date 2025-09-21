@@ -31,8 +31,8 @@ const Hero = () => {
         </div>
         
         {/* Desktop Layout */}
-        <div className="hidden md:block relative mt-8" style={{height: '200px'}}>
-          <div className="absolute left-[-190px] top-0 w-[290px] h-[220px] rounded-[30px] overflow-hidden">
+        <div className="hidden md:block relative mt-8" style={{height: '150px'}}>
+          <div className="absolute left-[-170px] top-0 w-[240px] h-[170px] rounded-[30px] overflow-hidden">
             <Image 
               src="/hero1.png" 
               alt="Hero Image 1" 
@@ -40,7 +40,7 @@ const Hero = () => {
               style={{objectFit: 'cover'}}
             />
           </div>
-          <div className="absolute left-[120px] top-[60px] w-[409px] h-[278px] rounded-[30px] overflow-hidden">
+          <div className="absolute left-[100px] top-[55px] w-[380px] h-[230px] rounded-[30px] overflow-hidden">
             <Image 
               src="/hero2.png" 
               alt="Hero Image 2" 
@@ -48,7 +48,7 @@ const Hero = () => {
               style={{objectFit: 'cover'}}
             />
           </div>
-          <div className="absolute left-[550px] top-[10px] w-[409px] h-[260px] rounded-[30px] overflow-hidden">
+          <div className="absolute left-[510px] top-[-4px] w-[350px] h-[220px] rounded-[30px] overflow-hidden">
             <Image 
               src="/hero3.png" 
               alt="Hero Image 3" 
@@ -56,7 +56,7 @@ const Hero = () => {
               style={{objectFit: 'cover'}}
             />
           </div>
-          <div className="absolute left-[980px] top-[130px] w-[204px] h-[220px] rounded-[30px] overflow-hidden">
+          <div className="absolute left-[900px] top-[80px] w-[284px] h-[200px] rounded-[30px] overflow-hidden">
             <Image 
               src="/hero4.png" 
               alt="Hero Image 4" 

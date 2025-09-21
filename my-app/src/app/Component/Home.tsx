@@ -31,6 +31,7 @@ const Home: React.FC = () => {
     <div 
       className="relative min-h-screen bg-cover bg-center bg-no-repeat pb-16 overflow-hidden" 
       style={{
+        backgroundColor: '#F2F3F6',
         backgroundImage: `url(${backgroundImages[currentBackgroundIndex]})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -99,8 +100,11 @@ const Home: React.FC = () => {
                   <Link 
                     key={index} 
                     href={item.path} 
-                    className="text-white hover:text-green-400 text-lg md:text-sm font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)} // ✅ closes mobile menu after click
+                    className="text-white hover:text-green-400 text-lg md:text-sm font-medium z-50"
+                    onClick={() => {
+                      console.log(`Navigating to: ${item.path}`);
+                      setIsMobileMenuOpen(false);
+                    }}
                   >
                     {item.name}
                   </Link>

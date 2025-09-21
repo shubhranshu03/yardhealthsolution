@@ -33,7 +33,7 @@ const AboutFeatures = () => {
       <p className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-[28px] sm:leading-[32px] md:leading-[35px] text-[#909090] mb-12">
         At <span className="text-black text-[16px] sm:text-[18px] md:text-[20px]">YardHealth Hearing Solution</span>, we believe that hearing well is the first step toward living well. Our mission is to empower people with hearing loss by providing <span className="text-black text-[16px] sm:text-[18px] md:text-[20px]">world-class hearing aids, advanced diagnostic services, and personalized care</span> that restore confidence and improve quality of life.
         <br />
-        With a strong presence across India, YardHealth is becoming one of the most trusted names in hearing care. We partner with global leaders in hearing technology—<span className="text-black text-[16px] sm:text-[18px] md:text-[20px]">Signia, Phonak, Resound, Widex, Starkey, and Oticon</span>—to ensure our clients experience only the best in sound clarity and comfort.
+        With a strong presence across India, YardHealth is becoming one of the most trusted names in hearing care. We partner with <span className="text-black">global leaders in hearing technology</span>—<span className="text-black text-[16px] sm:text-[18px] md:text-[20px] font-bold">Signia, Phonak, Resound, Widex, Starkey, and Oticon</span>—to ensure our clients experience only the best in sound clarity and comfort.
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {features.map((feature, index) => (

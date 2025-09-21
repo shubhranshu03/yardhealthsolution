@@ -13,6 +13,8 @@ const Our = () => {
           objectFit="cover" 
           className="w-full h-full"
         />
+        {/* Add black overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
       
       {/* Content */}

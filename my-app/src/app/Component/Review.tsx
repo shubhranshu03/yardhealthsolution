@@ -1,6 +1,7 @@
   'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface Review {
   id: number;
@@ -93,9 +94,11 @@ const Review: React.FC = () => {
             >
               <div className="flex justify-start mb-4">
                 <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
-                  <img
+                  <Image
                     src={review.avatar}
                     alt={review.name}
+                    width={64}
+                    height={64}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -109,10 +112,12 @@ const Review: React.FC = () => {
 
               <div className="flex justify-start mb-3">
                 {Array.from({ length: 5 }, (_, i) => (
-                  <img 
+                  <Image
                     key={i}
                     src={getStarImage(review.name, i)}
                     alt="Star"
+                    width={24}
+                    height={24}
                     className="w-6 h-6 mr-1"
                   />
                 ))}

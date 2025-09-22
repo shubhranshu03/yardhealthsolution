@@ -2,12 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { FaStopwatch } from "react-icons/fa6";
-import { FaStethoscope } from "react-icons/fa";
-import { FaTrophy } from "react-icons/fa6";
-import { FaHeadSideVirus } from "react-icons/fa";
-import { FaSmile } from "react-icons/fa";
-import { FaCheckCircle } from "react-icons/fa";
 
 const WhyChose: React.FC = () => {
   const features = [

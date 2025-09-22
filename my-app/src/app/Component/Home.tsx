@@ -37,7 +37,7 @@ const Home: React.FC = () => {
       clearInterval(interval);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [handleScroll]); // Only depend on handleScroll
+  }, [handleScroll, backgroundImages.length]); // Only depend on handleScroll
 
   return (
     <div 

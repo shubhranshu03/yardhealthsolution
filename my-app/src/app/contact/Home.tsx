@@ -164,7 +164,7 @@ const Hero = () => {
                 </div>
 
                 {/* Third Row - Problem Description */}
-                <div className="mb-8 flex justify-center">
+                <div className="mb-2 flex justify-center">
                   <label className="block text-left text-gray-700 font-medium mb-2 w-full max-w-[700px]">
                     Tell us your problem <span className="text-red-500">*</span>
                   </label>

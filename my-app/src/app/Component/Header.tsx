@@ -50,13 +50,13 @@ const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className={`flex space-x-6 font-medium text-[14px] transition-colors duration-300 ${
-            isScrolled ? 'text-black' : 'text-black'
+            isScrolled ? 'text-gray-700' : 'text-gray-600'
           }`}>
-            <li><Link href="/" className="hover:text-green-500 transition-colors font-semibold">About</Link></li>
-            <li><Link href="/hearing-aids" className="hover:text-green-500 transition-colors font-semibold">Hearing Aid</Link></li>
-            <li><Link href="/our-services" className="hover:text-green-500 transition-colors font-semibold">Our brands</Link></li>
-            <li><Link href="/providers" className="hover:text-green-500 transition-colors font-semibold">Franchise</Link></li>
-            <li><Link href="/contact" className="hover:text-green-500 transition-colors font-semibold">Contact Us</Link></li>
+            <li><Link href="/" className="hover:text-green-500 transition-colors font-semibold text-gray-700">About Us</Link></li>
+            <li><Link href="/hearing-aids" className="hover:text-green-500 transition-colors font-semibold text-gray-700">Hearing Aid</Link></li>
+            <li><Link href="/our-services" className="hover:text-green-500 transition-colors font-semibold text-gray-700">Our brands</Link></li>
+            <li><Link href="/providers" className="hover:text-green-500 transition-colors font-semibold text-gray-700">Franchise</Link></li>
+            <li><Link href="/contact" className="hover:text-green-500 transition-colors font-semibold text-gray-700">Contact Us</Link></li>
           </ul>
         </nav>
 
@@ -124,12 +124,12 @@ const Header: React.FC = () => {
 
               {/* Mobile Navigation Links */}
               <nav className="flex-grow p-4">
-                <ul className="space-y-4 text-black font-medium text-[16px]">
-                  <li><Link href="/" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold">About</Link></li>
-                  <li><Link href="/hearing-aids" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold">Hearing Aid</Link></li>
-                  <li><Link href="/our-services" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold">Our brands</Link></li>
-                  <li><Link href="/providers" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold">Franchise</Link></li>
-                  <li><Link href="/contact" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold">Contact Us</Link></li>
+                <ul className="space-y-4 text-gray-700 font-medium text-[16px]">
+                  <li><Link href="/" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold text-gray-700">About</Link></li>
+                  <li><Link href="/hearing-aids" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold text-gray-700">Hearing Aid</Link></li>
+                  <li><Link href="/our-services" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold text-gray-700">Our brands</Link></li>
+                  <li><Link href="/providers" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold text-gray-700">Franchise</Link></li>
+                  <li><Link href="/contact" onClick={toggleMobileMenu} className="block py-2 hover:text-green-500 transition-colors font-semibold text-gray-700">Contact Us</Link></li>
                 </ul>
               </nav>
 

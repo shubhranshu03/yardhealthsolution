@@ -1,6 +1,6 @@
  "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'; // ✅ Import Next.js Link
 import { CiLocationOn } from "react-icons/ci";
@@ -17,6 +17,11 @@ const Home: React.FC = () => {
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Use useCallback to memoize the scroll handler
+  const handleScroll = useCallback(() => {
+    setIsMobileMenuOpen(false);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBackgroundIndex((prevIndex) => 
@@ -24,8 +29,15 @@ const Home: React.FC = () => {
       );
     }, 4000);
 
-    return () => clearInterval(interval);
-  }, []);
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]); // Only depend on handleScroll
 
   return (
     <div 
@@ -47,7 +59,13 @@ const Home: React.FC = () => {
           priority
           quality={100}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-          className="object-cover object-center"
+          className="object-cover object-center sm:object-center"
+          style={{
+            objectPosition: 'center',
+            objectFit: 'cover',
+            minHeight: '100%',
+            minWidth: '100%'
+          }}
         />
       </div>
       
@@ -109,6 +127,17 @@ const Home: React.FC = () => {
                     {item.name}
                   </Link>
                 ))}
+
+                {/* Mobile CTA Buttons */}
+                <div className="md:hidden flex flex-col space-y-4 mt-6 w-full px-4">
+                  <button className="w-full bg-transparent border-2 border-white text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-gray-800 transition-all duration-300 flex items-center justify-center">
+                    <CiLocationOn className="mr-2" />
+                    Find A Clinic
+                  </button>
+                  <button className="w-full bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-green-600">
+                    Login
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -116,7 +145,7 @@ const Home: React.FC = () => {
             <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
               <button className="bg-transparent border-2 border-white text-white px-3 py-1.5 lg:px-4 lg:py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-white hover:text-gray-800 transition-all duration-300 flex items-center">
                 <CiLocationOn className="mr-1 lg:mr-2" />
-                Find A Clinic
+                Find Clinics
               </button>
               <button className="bg-green-500 text-white px-4 py-1.5 lg:px-6 lg:py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-green-600">
                 Login
@@ -154,7 +183,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Slider Indicators - Responsive */}
-      <div className="absolute bottom-10 sm:bottom-16 left-0 right-0 z-20">
+      <div className="absolute bottom-18 sm:bottom-20 left-0 right-0 z-20">
         <div className="flex items-center justify-center gap-2 sm:gap-3">
           {backgroundImages.map((_, index) => (
             <button

@@ -36,7 +36,7 @@ const Journey: React.FC = () => {
             </div>
             <div className="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4 shadow-md" style={{ backgroundColor: '#474FB8' }}>1</div>
             <h3 className="text-lg font-semibold mb-3 text-gray-800">Book a Free Hearing Test</h3>
-            <p className="text-sm text-gray-600 font-medium leading-relaxed">Quick and simple online booking</p>
+            <p className="text-sm text-black font-[500] leading-relaxed">Quick and simple online booking</p>
           </div>
 
           {/* Step 2: Get a Professional Evaluation */}
@@ -62,7 +62,7 @@ const Journey: React.FC = () => {
             </div>
             <div className="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4 shadow-md" style={{ backgroundColor: '#474FB8' }}>2</div>
             <h3 className="text-lg font-semibold mb-3 text-gray-800">Get a Professional Evaluation</h3>
-            <p className="text-sm text-gray-600 font-medium leading-relaxed">Comprehensive audiological tests</p>
+            <p className="text-sm text-black font-[500] leading-relaxed">Comprehensive audiological tests</p>
           </div>
 
           {/* Step 3: Try Before You Buy */}
@@ -88,7 +88,7 @@ const Journey: React.FC = () => {
             </div>
             <div className="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4 shadow-md" style={{ backgroundColor: '#474FB8' }}>3</div>
             <h3 className="text-lg font-semibold mb-3 text-gray-800">Try Before You Buy</h3>
-            <p className="text-sm text-gray-600 font-medium leading-relaxed">Experience hearing aids in real-life situations</p>
+            <p className="text-sm text-black font-[500] leading-relaxed">Experience hearing aids in real-life situations</p>
           </div>
 
           {/* Step 4: Personalized Fitting & Support */}
@@ -114,7 +114,7 @@ const Journey: React.FC = () => {
             </div>
             <div className="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4 shadow-md" style={{ backgroundColor: '#474FB8' }}>4</div>
             <h3 className="text-lg font-semibold mb-3 text-gray-800">Personalized Fitting & Support</h3>
-            <p className="text-sm text-gray-600 font-medium leading-relaxed">Ongoing care and adjustments</p>
+            <p className="text-sm text-black font-[500] leading-relaxed">Ongoing care and adjustments</p>
           </div>
         </div>
       </div>
@@ -237,25 +237,25 @@ const Journey: React.FC = () => {
           {/* Step 1: Book a Free Hearing Test */}
           <div className="journey-step text-center relative">
             <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-800">Book a Free Hearing Test</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Quick and simple online booking</p>
+            <p className="text-sm sm:text-base text-black font-[500] leading-relaxed">Quick and simple online booking</p>
           </div>
 
           {/* Step 2: Get a Professional Evaluation */}
           <div className="journey-step text-center relative">
             <h3 className="text-base sm:text-lg font-semibold mb-4 text-gray-800 whitespace-nowrap">Get a Professional Evaluation</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Comprehensive audiological tests</p>
+            <p className="text-sm sm:text-base text-black font-[500] leading-relaxed">Comprehensive audiological tests</p>
           </div>
 
           {/* Step 3: Try Before You Buy */}
           <div className="journey-step text-center relative">
             <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-800">Try Before You Buy</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Experience hearing aids in real-life situations</p>
+            <p className="text-sm sm:text-base text-black font-[500] leading-relaxed">Experience hearing aids in real-life situations</p>
           </div>
 
           {/* Step 4: Personalized Fitting & Support */}
           <div className="journey-step text-center relative">
             <h3 className="text-base sm:text-lg font-semibold mb-3 text-gray-800 whitespace-nowrap">Personalized Fitting & Support</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">Ongoing care and adjustments</p>
+            <p className="text-sm sm:text-base text-black font-[500] leading-relaxed">Ongoing care and adjustments</p>
           </div>
         </div>
       </div>

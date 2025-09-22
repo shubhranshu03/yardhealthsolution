@@ -55,7 +55,7 @@ const Features: React.FC = () => {
               />
             </div>
             <h3 className="text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2">{feature.title}</h3>
-            <p className="text-xs sm:text-sm md:text-[14px] font-medium text-black leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">{feature.description}</p>
+            <p className="text-xs sm:text-sm md:text-[14px] font-semibold text-black leading-relaxed max-w-xs sm:max-w-sm md:max-w-md">{feature.description}</p>
           </div>
         ))}
       </div>

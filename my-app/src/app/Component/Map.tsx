@@ -46,7 +46,7 @@ const Map: React.FC = () => {
             ))}
             <div className="text-center lg:text-left mt-4 sm:mt-6">
               <button 
-                className="bg-green-500 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-green-600 transition-colors shadow-lg text-sm sm:text-base w-full sm:w-auto"
+                className="bg-[#4EBD44] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-green-600 transition-colors shadow-lg text-sm sm:text-base w-full sm:w-auto"
               >
                 View All
               </button>

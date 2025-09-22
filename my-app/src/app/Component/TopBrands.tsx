@@ -25,10 +25,11 @@ const TopBrands: React.FC = () => {
       </div>
       <div className="overflow-hidden">
         <div 
-          className="flex items-center gap-2 sm:gap-3 md:gap-4"
+          className="flex items-center"
           style={{
             animation: 'scroll 20s linear infinite',
-            width: 'max-content'
+            width: 'max-content',
+            gap: '12px' // Add minimal gap directly in style
           }}
         >
           {duplicatedBrands.map((brandIcon, index) => (
@@ -36,13 +37,14 @@ const TopBrands: React.FC = () => {
               key={index} 
               className="flex-shrink-0"
               style={{
-                width: 'clamp(150px, 25vw, 272px)',
-                height: 'clamp(50px, 8vw, 80px)',
+                width: 'clamp(120px, 20vw, 250px)', // Slightly reduced width
+                height: 'clamp(40px, 6vw, 70px)', // Slightly reduced height
                 opacity: 1,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#fff'
+                backgroundColor: '#fff',
+                margin: '0 2px' // Add minimal margin
               }}
             >
               <Image 

@@ -109,7 +109,7 @@ const WhyChoose: React.FC = () => {
           <div className="pt-12 sm:pt-14 lg:pt-16">
             <h3 className="text-lg sm:text-xl lg:text-[20px] font-bold mb-3 sm:mb-4">Our Vision</h3>
             <p className="text-sm sm:text-lg lg:text-[20px] leading-relaxed text-black">
-              To become India's most reliable hearing care partner by combining technology, compassion, and expertise—so that everyone can experience the joy of hearing life's moments clearly.
+              To become India&apos;s most reliable hearing care partner by combining technology, compassion, and expertise—so that everyone can experience the joy of hearing life&apos;s moments clearly.
             </p>
           </div>
         </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Home from "./Component/Home";
 import WhyChose from "./Component/Whychose";
 import ReviewComponent from "./Component/Review";

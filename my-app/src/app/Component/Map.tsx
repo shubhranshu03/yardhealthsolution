@@ -19,7 +19,7 @@ const Map: React.FC = () => {
         Expert Hearing Care, Wherever You Are
       </h2>
       <p className="text-center text-gray-600 mb-6 sm:mb-8 max-w-4xl mx-auto text-sm sm:text-base px-2">
-        With our Pan-India presence, you'll always find trusted Yard Health audiologists and modern hearing solutions near you.
+        With our Pan-India presence, you&apos;ll always find trusted Yard Health audiologists and modern hearing solutions near you.
       </p>
       <div className="flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0 lg:space-x-8">
         {/* Map Image */}

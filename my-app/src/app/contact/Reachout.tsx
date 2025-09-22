@@ -53,7 +53,7 @@ const WhyChoose: React.FC = () => {
             />
             <div className="pl-2 sm:pl-3 flex-1">
               <h3 className="font-bold text-sm sm:text-lg lg:text-[20px] text-black leading-tight">
-                Trial of world's top hearing aid 
+                Trial of world&apos;s top hearing aid 
               </h3>
               <h3 className="font-bold text-sm sm:text-lg lg:text-[20px] text-black leading-tight">
                 brands – Signia, Phonak, ReSound
